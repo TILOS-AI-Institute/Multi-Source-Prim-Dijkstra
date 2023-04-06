@@ -54,7 +54,8 @@ Progress Prizes will be handed to the top 5 teams according to the contest leade
 
 ## Registration Details
 **Registration**:  
-To register, please enter your full name, affiliation and email using the following [**link**](https://forms.gle/X7vkuCNNEwWDy1wY6).  
+PLEASE REGISTER USING THE FOLLOWING LINK [**link**](https://forms.gle/X7vkuCNNEwWDy1wY6) !!  
+You will be asked for your full name, affiliation, email, and teammates (if any).  
 You will receive an email the week before the contest starts confirming your registration.   
 The email will also contain information regarding program submission.    
 
@@ -124,7 +125,7 @@ If your model for $W'\_T + S'\_T$ gave the following output (as Python list):
 ```txt
 [38,39]
 ```
-The element of $x_{OBJ1,m}$ would be $1.0$% -- the best possible result.  
+The element of $x_{OBJ1,m}$ would be $0.0$% -- the best possible result.  
 
 However, if your model gave the following output instead,  
 ```txt
@@ -234,6 +235,9 @@ To generate your own training data, please follow the instructions described in 
 - Please check our testcases folder for the further details: [testcases](testcases)
 
 ## FAQs  
+Q: How do I request a clarification or get a question answered?   
+A: Please email either shreyasthumathy@gmail.com or mwoo@eng.ucsd.edu for a response within 24 hours. The question and answer will also appear on this README.   
+
 Q: What servers are used to run code?    
 A: Server specs: TBD (The VM instance will be created after receiving all registrations)  
 
