@@ -54,7 +54,7 @@ Progress Prizes will be handed to the top 5 teams according to the contest leade
 
 ## Registration Details
 **Registration**:  
-PLEASE REGISTER USING THE FOLLOWING LINK [**link**](https://forms.gle/X7vkuCNNEwWDy1wY6) !!  
+PLEASE REGISTER USING THE FOLLOWING [**LINK**](https://forms.gle/X7vkuCNNEwWDy1wY6) !!  
 You will be asked for your full name, affiliation, email, and teammates (if any).  
 You will receive an email the week before the contest starts confirming your registration.   
 The email will also contain information regarding program submission.    
