@@ -1,6 +1,9 @@
 # Multi-Source Prim-Dijkstra
 
-<span style="color:red">***UPDATE***</span>  
+
+```diff
+- UPDATE
+``` 
 Our MSPD Machine Learning [Contest](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest) is now open for registration !!!   
 Thanks to [The OpenROAD Project](https://theopenroadproject.org), the contest has over \$7500 in available prizes!      
 
