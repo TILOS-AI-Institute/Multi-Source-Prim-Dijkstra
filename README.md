@@ -1,7 +1,7 @@
-# Multi-Source Prim-Dijkstra
-
-This repository contains our work for the following paper:  
-"An Effective Cost-Skew Tradeoff Heuristic for VLSI Global Routing",   
+# Multi-Source Prim-Dijkstra  
+   
+**This repository contains our work for the following paper:**  
+  "An Effective Cost-Skew Tradeoff Heuristic for VLSI Global Routing",   
 Andrew B. Kahng, Shreyas Thumathy, Mingyu Woo     
 [[PDF]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf), [[PPTX]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pptx), [[MP4]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.mp4)
 
