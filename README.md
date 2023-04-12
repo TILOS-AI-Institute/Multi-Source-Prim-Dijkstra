@@ -1,13 +1,16 @@
 # Multi-Source Prim-Dijkstra  
+
+***04/12/23 UPDATE***    
+The MSPD contest is **now live** !!!   
+The ISQED-2023 conference occurred from April 5th to 7th.      
+
    
 **This repository contains our work for the following paper:**  
   "An Effective Cost-Skew Tradeoff Heuristic for VLSI Global Routing",   
 Andrew B. Kahng, Shreyas Thumathy, Mingyu Woo     
 [[PDF]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf), [[PPTX]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pptx), [[MP4]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.mp4)
 
-**04/12/23 UPDATE**   
-The ISQED-2023 conference occurred from April 5th to 7th.    
-The MSPD contest is **now live** !!!       
+      
 
 
 Welcome to the Multi-Source Prim-Dijkstra repository on GitHub. Multi-Source Prim-Dijkstra (MSPD) is a new and efficient heuristic rectilinear Steiner tree construction that more effectively trades off between competing objectives of minimum cost and minimum skew. The paper will appear at ISQED-2023 in April 2023. Supporting code and data are provided in this repository. We are also sponsoring a machine learning contest (see below).
