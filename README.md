@@ -1,7 +1,7 @@
 # Multi-Source Prim-Dijkstra  
 
 ***04/12/23 UPDATE***    
-The MSPD contest is **now live** !!!   
+The MSPD [contest](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest) is now open for registration !!!   
 The ISQED-2023 conference occurred from April 5th to 7th.      
 
    
