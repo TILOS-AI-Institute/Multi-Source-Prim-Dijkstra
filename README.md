@@ -1,10 +1,12 @@
 # Multi-Source Prim-Dijkstra
-
-
-$${\color{red}UPDATE}$$
+$${\color{red}UPDATE}$$  
 Our MSPD Machine Learning [Contest](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest) is now open for registration !!!   
 Thanks to [The OpenROAD Project](https://theopenroadproject.org), the contest has over \$7500 in available prizes!
+
+
 Welcome to the Multi-Source Prim-Dijkstra repository on GitHub. Multi-Source Prim-Dijkstra (MSPD) is a new and efficient heuristic rectilinear Steiner tree construction that more effectively trades off between the competing objectives of minimum tree cost and minimum tree skew. The method was reported in our ISQED-2023 [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf). This repository contains code and data, and hosts a machine learning contest that runs from April 2023 to November 2023.
+
+
 **This repository contains our work for the ISQED-2023 paper:**  
 Andrew B. Kahng, Shreyas Thumathy and Mingyu Woo, "An Effective Cost-Skew Tradeoff Heuristic for VLSI Global Routing", *Proc. Intl. Symp. on Quality Electronic Design*, April 2023   
 [[PDF]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf), [[PPTX]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pptx), [[MP4]](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.mp4).  
