@@ -3,9 +3,9 @@
 - **Registration Starts**: April 5th, 2023  
 - **Registration Ends**: May 5th, 2023  
 - **Contest (Submission Period) Starts**: May 10th, 2023    
-- **Progress Prize Deadline**: September 12th, 2023    
+- **Progress Prizes Awarded**: September 12th, 2023    
 - **Contest Ends**: November 10th, 2023      
-- **Winners Announced**: November 15th, 2023  
+- **Final Prizes Awarded**: November 15th, 2023  
 - **GitHub Site**: https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra  
 - **Paper Reference**: [https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf)
 - **Email**: shreyasthumathy@gmail.com, mwoo@ucsd.edu, abk@ucsd.edu
@@ -24,12 +24,12 @@
 
 
 ## Overview  
-Many algorithms have focused on dealing with optimizing the wirelength (the sum of edges in a graph) and the maximum pathlength (the length of the longest path in a graph). Such algorithms include Prim-Dijkstra (PD) [2], which uses the $\alpha$ parameter to construct trees, and SALT [3], which uses the $\epsilon$ parameter to construct trees. More recent works such as TreeNet [4] emphasize the use case of machine learning to effectively identify which construction is best based on the input net.
+A routing tree consists of $N$ vertices, with one of these vertices designated as the root, and $N - 1$ edges. In VLSI, algorithms have traditionally focused on taking the $N$ vertices as the input and returning a routing tree that optimizes between wirelength (also known as cost) and pathlength. Wirelength is the sum of the edge lengths in our routing tree, where edge lengths are determined by the Manhattan distance between two vertices in a routing tree. Pathlength is the length of the longest path in the routing tree. Such algorithms that optimize on wirelength and pathlength include Prim-Dijkstra (PD) [2], which uses the $\alpha$ parameter to construct trees, and SALT [3], which uses the $\epsilon$ parameter to construct trees. More recent works such as TreeNet [4] emphasize the use case of machine learning to effectively identify which construction is best based on the input net.
 
-However, skew, the maximum difference in pathlengths for a graph, is also an important metric for routing trees.   
-[1] introduces a multi-source approach to effectively advance the cost-skew tradeoffs in the PD routing tree algorithm.  
+However, *skew*, the maximum difference in source-to-sink pathlengths in a (rooted, with the source terminal being the root) tree, is also an important metric for routing trees.   
+The ISQED-2023 paper [1] introduces a *multi-source Prim-Dijkstra* (MSPD) approach to improve cost-skew tradeoffs achievable using an existing Prim-Dijkstra Steiner routing tree implementation.  
 
-This contest focuses on predicting high-quality multi-source combinations to use in the MSPD construction, for any given pointset with an identified root.
+This contest focuses on predicting a high-quality multi-source combination to use in the MSPD construction, for any given pointset with identified root.
  
 ## Prizes    
 ***Final Prizes***  
@@ -44,12 +44,12 @@ Second Place: $400
 Third Place: $250    
 Fourth and Fifth Place: $125  
 
-Progress Prizes will be handed to the top 5 teams according to the contest leaderboard as of September 10th, 2023 11:59 PM PST.  
+Progress Prizes will be awarded to the top 5 teams according to the contest leaderboard as of September 10th, 2023 11:59 PM PST.  
 
 *Notes on prizes*:  
 (1) Recipients of TILOS project funding within the 12 months preceding the contest submission date are not eligible for an Award.   
 (2) Applicable taxes may be assessed on and deducted from Award payments, subject to UC San Diego and U.S. government policies.   
-(3) 40% of each prize is awarded for performance in the contest according to the defined evaluation metric. The remaining 60% is awarded if the contestant publishes their winning software as open source under a permissive open-source license (BSD, MIT, Apache), within 30 days of being announced as a winner.  
+(3) 40% of each Final Prize is awarded for performance in the contest according to the defined evaluation metric. The remaining 60% is awarded if the contestant publishes their winning software as open source under a permissive open-source license (BSD, MIT, Apache), within 30 days of being announced as a winner.  
   
 
 ## Registration Details
@@ -62,13 +62,18 @@ The email will also contain information regarding program submission.
 
 ## Evaluation 
 **Goal**:  
-Develop models to predict a set of 1-3 sources that will yield a Multi-Source Prim-Dijkstra (MSPD) routing tree with best-possible cost-skew tradeoff in the output Steiner tree.  The Steiner tree will be constructed using MSPD with the STT mode. The contest defines three tradeoff objectives (corresponding to evaluation metrics, and models used in inference) for which contestants' performance is weighted equally in the scoring.
+Develop models to predict a set of 1-3 sources that will yield a Multi-Source Prim-Dijkstra (MSPD) routing tree with best-possible cost-skew tradeoff in the output Steiner tree.  The Steiner tree will be constructed using MSPD with the STT mode. The contest defines three cost-skew tradeoff objectives (corresponding to evaluation metrics, and models used in inference) for which contestants' performance is weighted equally in the scoring.
 
-***Three separate models are required***:   
-(1) one to minimize $W'_T + S'_T$,  
-(2) one to minimize $3W'_T + S'_T$,  
-(3) and one to minimize $W'_T + 3S'_T$.  
-$W'_T$ and $S'_T$ represent the normalized wirelength and normalized skew respectively.   
+The input for a trained model will be a series of input nets, where a single net consists of N vertices where the first vertex is the root. 
+
+The output will be a set of 1-3 sources to use for MSPD construction. Please see Section IV of the [ISQED-2023](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf) paper for more details about what a source is. 
+
+
+***You must submit three separate models, respectively corresponding to the three distinct optimization objectives***:   
+(1) a model to minimize $W'_T + S'_T$,  
+(2) a model to minimize $3W'_T + S'_T$, and
+(3) a model to minimize $W'_T + 3S'_T$.  
+$W'_T$ and $S'_T$ respectively denote the normalized wirelength and normalized skew of the (MSPD) Steiner routing tree that results from use of the model’s identified source(s).   
 
 **Evaluation Metric**:    
 Your model will be evaluated on 300 **visible** (public) testcases and 200 **hidden** testcases for each input net size $N = 10, 15, 25, 30, 40, 45, 50$.   
@@ -77,13 +82,13 @@ Your model will be evaluated based on the following *evaluation metric* (EM):
 
 $$EM = EM_{open} + 2 * EM_{hidden}$$
 
-$$EM_{m} =  \sum_{\forall n \in N} k_{n} * \sum_{\forall p \in OBJ} MSE_{n} (X_{p,m}, Y_{p,m}) $$
+$$EM_{m} =  \sum_{n \in N} k_{n} * \sum_{p \in OBJ} MSE_{n} (X_{p,m}, Y_{p,m}) $$
 
 where $OBJ = \lbrace W'\_T + S'\_T, 3W'\_T + S'\_T, W'\_T + 3S'\_T  \rbrace$
 
 $X_{p,m}$ and $Y_{p,m}$ are 1D vectors, $m = \lbrace Open, Hidden \rbrace$ 
 
-$|X_{p,m}|=|Y_{p,m}|=300$ for $m=open$, and $200$ for $m=hidden$, 
+The vectors $X_{p,m}$ and $Y_{p,m}$ have a size of 300 for $m=open$, and $200$ for $m=hidden$, 
 
 $X_{p,m} = \lbrace predictedVal/bestCostVal, ... \rbrace$, $Y_{p,m} = \lbrace 1,1,...,1 \rbrace$, 
 
