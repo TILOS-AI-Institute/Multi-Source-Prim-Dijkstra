@@ -24,9 +24,12 @@
 
 
 ## Overview  
-A routing tree consists of $N$ vertices, with one of these vertices designated as the root, and $N - 1$ edges. In VLSI, algorithms have traditionally focused on taking the $N$ vertices as the input and returning a routing tree that optimizes between wirelength (also known as cost) and pathlength. Wirelength is the sum of the edge lengths in our routing tree, where edge lengths are determined by the Manhattan distance between two vertices in a routing tree. Pathlength is the length of the longest path in the routing tree. Such algorithms that optimize on wirelength and pathlength include Prim-Dijkstra (PD) [2], which uses the $\alpha$ parameter to construct trees, and SALT [3], which uses the $\epsilon$ parameter to construct trees. More recent works such as TreeNet [4] emphasize the use case of machine learning to effectively identify which construction is best based on the input net.
+A routing tree consists of $N$ vertices, with one of these vertices designated as the root, and $N - 1$ directed edges.   
+In VLSI, algorithms have traditionally focused on taking the $N$ vertices as the input and returning a routing tree that optimizes between *wirelength* (also known as cost) and *pathlength*.   
+Wirelength is the sum of the edge lengths in our routing tree, where edge lengths are determined by the **Manhattan distance** between two vertices in a routing tree. Pathlength is the length of the longest path starting at the root.   
+Such algorithms that optimize on wirelength and pathlength include Prim-Dijkstra (PD) [2], which uses the $\alpha$ parameter to construct trees, and SALT [3], which uses the $\epsilon$ parameter to construct trees. More recent works such as TreeNet [4] emphasize the use case of machine learning to effectively identify which construction is best based on the input net.
 
-However, *skew*, the maximum difference in source-to-sink pathlengths in a (rooted, with the source terminal being the root) tree, is also an important metric for routing trees.   
+*Skew*, the maximum difference in source-to-sink pathlengths in a (rooted, with the source terminal being the root) tree, is also an important metric for routing trees.   
 The ISQED-2023 paper [1] introduces a *multi-source Prim-Dijkstra* (MSPD) approach to improve cost-skew tradeoffs achievable using an existing Prim-Dijkstra Steiner routing tree implementation.  
 
 This contest focuses on predicting a high-quality multi-source combination to use in the MSPD construction, for any given pointset with identified root.
@@ -73,27 +76,35 @@ The output will be a set of 1-3 sources to use for MSPD construction. Please see
 (1) a model to minimize $W'_T + S'_T$,  
 (2) a model to minimize $3W'_T + S'_T$, and
 (3) a model to minimize $W'_T + 3S'_T$.  
-$W'_T$ and $S'_T$ respectively denote the normalized wirelength and normalized skew of the (MSPD) Steiner routing tree that results from use of the model’s identified source(s).   
+$W'_T$ and $S'_T$ respectively denote the normalized wirelength (normalized to the wirelength of the minimum spanning tree for the input) and normalized skew (normalized to the skew of the shortest-paths tree for the input) for the MSPD Steiner routing tree that results from the use of the model’s identified source(s).   
 
 **Evaluation Metric**:    
-Your model will be evaluated on 300 **visible** (public) testcases and 200 **hidden** testcases for each input net size $N = 10, 15, 25, 30, 40, 45, 50$.   
+Your model will be evaluated on 300 **visible** (public) testcases and 200 **hidden** testcases for each input net size $N = \{10, 15, 25, 30, 40, 45, 50\}$.   
 Your model will be evaluated based on the following *evaluation metric* (EM):    
  
 
 $$EM = EM_{open} + 2 * EM_{hidden}$$
 
-$$EM_{m} =  \sum_{n \in N} k_{n} * \sum_{p \in OBJ} MSE_{n} (X_{p,m}, Y_{p,m}) $$
+$$EM_{m} =  \sum_{n \in N} k_{n} * \sum_{p \in OBJ} MSE (X_{p,m}, Y_{p,m}) $$
 
 where $OBJ = \lbrace W'\_T + S'\_T, 3W'\_T + S'\_T, W'\_T + 3S'\_T  \rbrace$
+
+$N = \{10, 15, 25, 30, 40, 45, 50\}$, 
+
 
 $X_{p,m}$ and $Y_{p,m}$ are 1D vectors, $m = \lbrace Open, Hidden \rbrace$ 
 
 The vectors $X_{p,m}$ and $Y_{p,m}$ have a size of 300 for $m=open$, and $200$ for $m=hidden$, 
+$X_{p,m} = (predictedVal_{p,m,1}/bestCostVal_{p,m,1}, predictedVal_{p,m,2}/bestCostVal_{p,m,2}, ...)$, $Y_{p,m} = (1,1,...,1)$, 
 
-$X_{p,m} = \lbrace predictedVal/bestCostVal, ... \rbrace$, $Y_{p,m} = \lbrace 1,1,...,1 \rbrace$, 
+where $predictedVal_{p,m,s}$ is the predicted value of $s$-th net under objective $p$, mode $m$ from your machine learning model,
+$bestCostVal_{p,m,s}$ is the best known objective value of $s$-th net under objective $p$, mode $m$ from our database (data_obj_stt_*.csv.gz), 
+
+$MSE(a, b)$ is the mean squared error between the two 1D vectors $a$ and $b$.
 
 $k_{n} = 1$ for $n \in \lbrace 10, 15, 25, 30 \rbrace$ and 
 $k_{n} = 2$ for $n \in \lbrace 40, 45, 50 \rbrace$.
+
 
 Please check the [inference.py](inference.py#L112-L133) to see $EM_{open}$ in detail.
 
@@ -272,3 +283,5 @@ A: To keep teams moving forward well, the contest will support Alpha, Beta and F
 7. H. B. Bakoglu, "Circuits, Interconnections, and Packaging for VLSI", Addison-Wesley, 1990.  
 
 8. J. Cong, A. B. Kahng, C. K. Koh and C.-W. A. Tsao,  "Bounded-Skew Clock and Steiner Routing", [(.pdf)](https://vlsicad.ucsd.edu/Publications/Journals/j32_pub.pdf), ACM TODAES 3(3) (1998), pp. 341-388.
+
+
