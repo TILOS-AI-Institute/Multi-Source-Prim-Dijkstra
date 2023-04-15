@@ -94,12 +94,12 @@ $N = \{10, 15, 25, 30, 40, 45, 50\}$,
 $X_{p,m}$ and $Y_{p,m}$ are 1D vectors, and $m = \lbrace Open, Hidden \rbrace$.
 
 The vectors $X_{p,m}$ and $Y_{p,m}$ have a size of 300 for $m=open$, and $200$ for $m=hidden$.  
-$X_{p,m} = (predictedVal_{p,m,1}/bestCostVal_{p,m,1}, predictedVal_{p,m,2}/bestCostVal_{p,m,2}, ...)$, $Y_{p,m} = (1,1,...,1)$, 
 
+$X_{p,m} = (predictedVal_{p,m,1}/bestCostVal_{p,m,1}, predictedVal_{p,m,2}/bestCostVal_{p,m,2}, ...)$, $Y_{p,m} = (1,1,...,1)$,  
 where $predictedVal_{p,m,s}$ is the predicted value of $s$-th net under objective $p$, mode $m$ from your machine learning model,
 $bestCostVal_{p,m,s}$ is the best known objective value of $s$-th net under objective $p$, mode $m$ from our database (data_obj_stt_*.csv.gz), 
 
-$MSE(a, b)$ is the mean squared error between the two 1D vectors $a$ and $b$.
+$MSE(a, b)$ is the mean squared error between some two 1D vectors $a$ and $b$.
 
 $k_{n} = 1$ for $n \in \lbrace 10, 15, 25, 30 \rbrace$ and 
 $k_{n} = 2$ for $n \in \lbrace 40, 45, 50 \rbrace$.
