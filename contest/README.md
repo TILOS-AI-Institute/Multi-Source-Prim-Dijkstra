@@ -91,10 +91,9 @@ where $OBJ = \lbrace W'\_T + S'\_T, 3W'\_T + S'\_T, W'\_T + 3S'\_T  \rbrace$
 
 $N = \{10, 15, 25, 30, 40, 45, 50\}$, 
 
+$X_{p,m}$ and $Y_{p,m}$ are 1D vectors, and $m = \lbrace Open, Hidden \rbrace$.
 
-$X_{p,m}$ and $Y_{p,m}$ are 1D vectors, $m = \lbrace Open, Hidden \rbrace$ 
-
-The vectors $X_{p,m}$ and $Y_{p,m}$ have a size of 300 for $m=open$, and $200$ for $m=hidden$, 
+The vectors $X_{p,m}$ and $Y_{p,m}$ have a size of 300 for $m=open$, and $200$ for $m=hidden$.  
 $X_{p,m} = (predictedVal_{p,m,1}/bestCostVal_{p,m,1}, predictedVal_{p,m,2}/bestCostVal_{p,m,2}, ...)$, $Y_{p,m} = (1,1,...,1)$, 
 
 where $predictedVal_{p,m,s}$ is the predicted value of $s$-th net under objective $p$, mode $m$ from your machine learning model,
