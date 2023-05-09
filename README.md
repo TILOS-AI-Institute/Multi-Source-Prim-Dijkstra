@@ -1,6 +1,10 @@
 # Multi-Source Prim-Dijkstra
 
-![Update](contest/update.png)  
+**UPDATE #2**  
+The registration period has been extended to June 15th, 2023 !!!  
+Please register using the following [form](https://docs.google.com/forms/d/12cgWG7IrPJwKIieCOzxTh46HBIfbnvkCaQaHxU4IX6c/viewform?pli=1&pli=1&edit_requested=true).  
+
+**UPDATE #1**  
 Our MSPD Machine Learning [Contest](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest) is now open for registration !!!   
 Thanks to [The OpenROAD Project](https://theopenroadproject.org), the contest has over \$7500 in available prizes!
 
