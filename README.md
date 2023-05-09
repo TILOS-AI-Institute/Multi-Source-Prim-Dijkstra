@@ -1,7 +1,7 @@
 # Multi-Source Prim-Dijkstra
 
 **UPDATE #2**  
-The registration period has been extended to June 15th, 2023 !!!  
+The registration period has been extended to *June 15th, 2023*. 
 Please register using the following [form](https://docs.google.com/forms/d/12cgWG7IrPJwKIieCOzxTh46HBIfbnvkCaQaHxU4IX6c/viewform?pli=1&pli=1&edit_requested=true).  
 
 **UPDATE #1**  
