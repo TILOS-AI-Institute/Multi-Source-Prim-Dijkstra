@@ -3,8 +3,9 @@
 
 
 **UPDATE #2**  
-**Registration deadline:**  ${\color{red}06/15/2023}$. 
-Please register using the following [form](https://docs.google.com/forms/d/12cgWG7IrPJwKIieCOzxTh46HBIfbnvkCaQaHxU4IX6c/viewform?pli=1&pli=1&edit_requested=true).  
+**Registration deadline:**  ${\color{red}June 15th, 2023}$.   
+**Contest Start Date:** June 25th, 2023.   
+Please register using the following [form](https://docs.google.com/forms/d/12cgWG7IrPJwKIieCOzxTh46HBIfbnvkCaQaHxU4IX6c/viewform?pli=1&pli=1&edit_requested=true).    
 
 **UPDATE #1**  
 Our MSPD Machine Learning [Contest](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest) is now open for registration !!!   
