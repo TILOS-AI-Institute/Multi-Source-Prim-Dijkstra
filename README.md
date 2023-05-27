@@ -3,8 +3,8 @@
 
 
 **UPDATE #2**  
-**Registration deadline:**  ${\color{red}June 15th, 2023}$.   
-**Contest Start Date:** June 25th, 2023.   
+**Registration deadline:**  ${\color{red}06/15/23}$.    
+**Contest Start Date:** 06/25/23.   
 Please register using the following [form](https://docs.google.com/forms/d/12cgWG7IrPJwKIieCOzxTh46HBIfbnvkCaQaHxU4IX6c/viewform?pli=1&pli=1&edit_requested=true).    
 
 **UPDATE #1**  
