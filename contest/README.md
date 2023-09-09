@@ -261,8 +261,8 @@ Please see inference.py for details of the runtime limitation.
 
 Q: How to submit our trained model?    
 A: To keep teams moving forward well, the contest will support Alpha, Beta and Final submission deadlines. The Alpha and Beta deadlines help ensure smooth contest submission and evaluation processes. 
-1. Alpha submission (deadline TBA): Please upload your models into /home/submission/alpha/teamID/  
-2. Beta submission (deadline TBA): Please upload your models into /home/submission/beta/teamID/  
+1. Alpha submission (deadline: 10/15/23): Please upload your models into /home/submission/alpha/teamID/  
+2. Beta submission (deadline: 11/11/23): Please upload your models into /home/submission/beta/teamID/  
 3. Final submission (deadline TBA): Please upload your models into /home/submission/final/teamID/    
 
 Q: Are the visible test cases a random sample of the overall set of (visible+hidden) cases? (I would assume so.)   
