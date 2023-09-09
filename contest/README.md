@@ -1,7 +1,6 @@
 # Multi-Source Prim-Dijkstra Contest  
 
 - **Registration Starts**: April 5th, 2023  
-- **Registration Ends**: June 15th, 2023  
 - **Contest (Submission Period) Starts**: June 25th, 2023    
 - **Progress Prizes Awarded**: October 27th, 2023    
 - **Contest Ends**: December 15th, 2023      
