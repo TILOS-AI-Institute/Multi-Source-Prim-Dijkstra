@@ -46,7 +46,7 @@ Second Place: $400
 Third Place: $250    
 Fourth and Fifth Place: $125  
 
-Progress Prizes will be awarded to the top 5 teams according to the contest leaderboard as of September 10th, 2023 11:59 PM PST.  
+Progress Prizes will be awarded to the top 5 teams according to the contest leaderboard as of November 11th, 2023 11:59 PM PST.  
 
 *Notes on prizes*:  
 (1) Recipients of TILOS project funding within the 12 months preceding the contest submission date are not eligible for an Award.   
