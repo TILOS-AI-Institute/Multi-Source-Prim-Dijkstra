@@ -249,7 +249,26 @@ To generate your own training data, please follow the instructions described in 
 
 ## FAQs  
 Q: How do I request a clarification or get a question answered?   
-A: Please email either shreyasthumathy@gmail.com or mwoo@eng.ucsd.edu for a response within 24 hours. The question and answer will also appear on this README.   
+A: Please email either shreyasthumathy@gmail.com or mwoo@eng.ucsd.edu. The question and answer will also appear on this README.  
+  
+Q: My team and I would like to know when the missing testcases for n>15 in the MSPD contest are being released?  
+A: This issue has been fixed.  
+
+Q: We would like to better understand the .json files that are being produced by the STT.cpp scripts as we hope we could generate our own testdata as we believe that the current amount is rather low for our models.  
+A: Regarding data generation, I think it would be very helpful to read Section 5 from our paper. Please let me know if you would like any further information.   
+
+Q: We're pretty sure that obj2 und obj3 have been swapped around in the testcases, since the github and paper talk about obj2 being $3*W+S$ and obj3 being $W+3*S$. The testcases seem have it the other way around. So which is the correct way?  
+A: From our README:  
+- obj1: First objective - skew + wireLength [int]  
+- obj2: Second objective - 3 * skew + wireLength [int]  
+- obj3: Third objective - skew + 3 * wireLength [int]  
+
+
+
+Q: If the "best known objective value" refers to normalized values, then why do the data_obj_stt_N.csv.gz folders only contain the absolute values for obj1,obj2,obj3? The problem with that is the following: The sum of normalized values have a different optimum than the sum of absolute values.  
+A:  Please refer to our evaluation script: https://github.com/TILOS-AI-Institute/Multi-Source-Prim Dijkstra/blob/84471b8e9bcb09cf4b43e4d65c5d8f7a3f6e6a90/contest/inference.py#L109-L117  
+You are given absolute values, but the evaluation script normalizes them. 
+
 
 Q: What servers are used to run code?    
 A: Server specs: TBD (The VM instance will be created after receiving all registrations)  
