@@ -119,18 +119,18 @@ We will refer to the 300th pointset in the visible $N = 45$ [testcases](https://
 
 The trees below display the best Steiner PD trees for $W'\_T + S'\_T$, $3W'\_T + S'\_T$, and $W'\_T + 3S'\_T$ respectively.  
 The costs are $2.00$ ($W'_T = 0.969069$, $S'_T = 1.02994$), $3.94$ ($W'_T = 0.969069$, $S'_T = 1.02994$), and $4.03$ respectively ($W'_T = 1.01916$, $S'_T = 1.00428$).  
-![PD $W'\_T + S'\_T$](doc/x+y.png)  
-![Best PD $3W'\_T + S'\_T$](doc/3x+y.png)
-![Best PD $W'\_T + 3S'\_T$](doc/x+3y.png) 
+![PD $`W'\_T + S'\_T`$](/doc/x+y.png)  
+![Best PD $`3W'\_T + S'\_T`$](/doc/3x+y.png)
+![Best PD $`W'\_T + 3S'\_T`$](/doc/x+3y.png) 
 
 *Note: The vertex with the minimum pathlength is highlighted in red, and the vertex with the maximum pathlength is highlighted in orange.*  
 
 *However*, the best Steinerized ***MSPD*** tree for $W'\_T + S'\_T$ is shown below, with the cost of $1.78$ ($W'_T = 1.13568$, $S'_T = 0.648417$).   
-![MSPD $W'\_T + S'\_T$](doc/mspd_xy.png)  
+![MSPD $`W'\_T + S'\_T$`](/doc/mspd_xy.png)  
 The best MSPD tree for $3W'\_T + S'\_T$ is shown below, with the cost of $3.88$ ($W'_T = 1.02513$, $S'_T = 0.807528$).  
-![Best MSPD $3W'\_T + S'\_T$](doc/mspd_3xy.png)  
+![Best MSPD $`3W'\_T + S'\_T`$](/doc/mspd_3xy.png)  
 The best MSPD tree for $W'\_T + 3S'\_T$ is shown below, with the cost of $3.08$ ($W'_T = 1.13568$, $S'_T = 0.648417$).   
-![Best MSPD $W'\_T + 3S'\_T$](doc/mspd_x3y.png)  
+![Best MSPD $`W'\_T + 3S'\_T`$](/doc/mspd_x3y.png)  
 
 *Note: the sources are the only vertices that have labels. They also have two rings (black+black or red+black).*  
 
