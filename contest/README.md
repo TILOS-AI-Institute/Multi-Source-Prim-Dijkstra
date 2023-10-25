@@ -281,7 +281,7 @@ You are given absolute values, but the evaluation script will normalize them.
 Q: What does "the best known objective value" refer to?     
 A: The “best known objective value” refers to the lowest sum of normalized cost and normalized skew computed by all combinations of alphas and sources described in Section V of our [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf).    
 
-Q: We're pretty sure that obj2 und obj3 have been swapped around in the testcases, since the github and paper talk about obj2 being $3*W+S$ and obj3 being $W+3*S$. The testcases seem have it the other way around. So which is the correct way?  
+Q: We're pretty sure that obj2 und obj3 have been swapped around in the testcases, since the github and paper talk about obj2 being $3W + S$ and obj3 being $W + 3S$. The testcases seem have it the other way around. So which is the correct way?  
 A: From our README:  
 - obj1: First objective - skew + wireLength [int]   
 - obj2: Second objective - 3 * skew + wireLength [int]   
