@@ -135,20 +135,20 @@ The best MSPD tree for $W'\_T + 3S'\_T$ is shown below, with the cost of $3.08$ 
 *Note: the sources are the only vertices that have labels. They also have two rings (black+black or red+black).*  
 
 If your model for $W'\_T + S'\_T$ gave the following output (as Python list):    
-```txt
+```python
 [38,39]
 ```
 The element of $x_{OBJ1,m}$ would be $0.0$% -- the best possible result.  
 
 However, if your model gave the following output instead,  
-```txt
+```python
 [7,12,23]
 ```
 which results in the tree below with a cost of $2.20$, the element of $x_{OBJ1,m}$ would be $1.23$ since $\frac{2.20}{1.78} = 1.23$, meaning a $23$% increase from $1.78$.
 
 *Note: many of the results in this section are rounded to two decimal places for simplicity.*   
 
-![MSPD example for $W'\_T + S'\_T$](doc/ex_xy.png)    
+![MSPD example for $`W'\_T + S'\_T`$](/doc/ex_xy.png)    
 
 ## Allowed Interfaces
 - We only accept *Python3* interfaces. If you have built your prediction model using *C++*, please submit a working binary and corresponding Python wrapping, following the format of the [inference.py](inference.py) example.
@@ -251,7 +251,7 @@ To generate your own training data, please follow the instructions described in 
 Q: How do I request a clarification or get a question answered?   
 A: Please email either shreyasthumathy@gmail.com or mwoo@ucsd.edu. The question and answer will also appear on this README.  
 
-Q: How do we test inference.py on the server?  
+Q: How do we test [inference.py](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/blob/main/contest/inference.py) on the server?  
 A: Please create a team specific virtual enviornment so that you can install whatever packages necessary for your team's model. 
 Please also save a list of these packages in a standard requirements.txt file.   
 For more information, please review the October 16th, 2023 email.  
@@ -275,11 +275,11 @@ Q: Are we allowed to train our models on your server?
 A: Please refrain from running anything other than inference.py on our server. Our server is supposed to serve as a means for contestants to upload and test their submissions, not train any models.   
 
 Q: If the "best known objective value" refers to normalized values, then why do the data_obj_stt_N.csv.gz folders only contain the absolute values for obj1,obj2,obj3? The problem with that is the following: The sum of normalized values have a different optimum than the sum of absolute values.  
-A:  Please refer to our evaluation (script) [https://github.com/TILOS-AI-Institute/Multi-Source-Prim Dijkstra/blob/84471b8e9bcb09cf4b43e4d65c5d8f7a3f6e6a90/contest/inference.py#L109-L117]. 
+A:  Please refer to our evaluation [script](https://github.com/TILOS-AI-Institute/Multi-Source-Prim Dijkstra/blob/84471b8e9bcb09cf4b43e4d65c5d8f7a3f6e6a90/contest/inference.py#L109-L117). 
 You are given absolute values, but the evaluation script will normalize them.  
 
 Q: What does "the best known objective value" refer to?     
-A: The “best known objective value” refers to the lowest sum of normalized cost and normalized skew computed by all combinations of alphas and sources described in Section V of our paper.    
+A: The “best known objective value” refers to the lowest sum of normalized cost and normalized skew computed by all combinations of alphas and sources described in Section V of our [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf).    
 
 Q: We're pretty sure that obj2 und obj3 have been swapped around in the testcases, since the github and paper talk about obj2 being $3*W+S$ and obj3 being $W+3*S$. The testcases seem have it the other way around. So which is the correct way?  
 A: From our README:  
@@ -288,10 +288,10 @@ A: From our README:
 - obj3: Third objective - skew + 3 * wireLength [int]  
   
 Q: We would like to better understand the .json files that are being produced by the STT.cpp scripts as we hope we could generate our own testdata as we believe that the current amount is rather low for our models.  
-A: Regarding data generation, please review Section 5 from our ISQED '23 paper.  
+A: Regarding data generation, please review Section 5 from our [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf).  
   
 Q: My team and I would like to know when the missing testcases for n>15 in the MSPD contest are being released?  
-A: This issue has been fixed. Please check the testcases folder for more information.  
+A: This issue has been fixed. Please check the [testcases](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest/testcases) folder for more information.  
 
 Q: Are the visible test cases a random sample of the overall set of (visible+hidden) cases? (I would assume so.)    
 A: Yes    
@@ -301,7 +301,13 @@ A: Server specs: TBD (The VM instance will be created after receiving all regist
  
 Q: Is there a public leaderboard?  
 A: No: the (progress) prize winners will be announced by email once the respective deadline has passed.  
-  
+
+Q: What is the reasoning behind the normalization choices in your paper?  
+A: Finding Steiner trees that result in minimum WL and skew are NP-hard problems.  
+Since $\alpha = 0.0$ yields an MST, which yields a minimum WL tree (not including Steiner trees), we chose to normalize our WL values to the WL found from running PD with $\alpha = 0.0$.  
+$\alpha = 1.0$ yields an SPT, which yields a minimum radius tree (again, not including Steiner trees). Because radius and skew are closely related in the context of the PD-Clock problem, we chose to normalize our skew values to the skew found from running PD with $\alpha = 1.0$.   
+For more information, please refer to Section II of our [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf).  
+
 ## References
 1. A. B. Kahng, S. Thumathy and M. Woo,  "An Effective Cost-Skew Tradeoff Heuristic for VLSI Global Routing", [(.pdf)](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf), Proc. IEEE Intl. Symp. on Quality Electronic Design, 2023, (to appear).  
 
