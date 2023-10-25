@@ -263,6 +263,10 @@ A: To keep teams moving forward well, the contest will support Alpha, Beta and F
 3. Final submission (deadline TBA)
 4. Please upload your team's submission to your team's assigned contest folder.
 
+Q: How do we submit our models?   
+A: Please upload your model and all of its necessary components onto your team's contest directory. After the deadline has passed, each team's models will be pulled onto the judging platform.   
+Additionally, feel free to archive your team's submission by creating a subdirectory named after the respective deadline (alpha/, beta/, final/).  
+
 Q: What is the maximum runtime per testcase?  
 A: Maximum runtime limit of inference: maximum of 10 CPU seconds (user time) per each testcase (pointset). This applies to all testcases across all values of $N$. Exceeding the runtime limit is severely penalized.  
 Please see inference.py for details of the runtime limitation.    
