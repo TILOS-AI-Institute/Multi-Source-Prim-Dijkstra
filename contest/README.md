@@ -288,7 +288,7 @@ A: From our README:
 - obj3: Third objective - skew + 3 * wireLength [int]  
   
 Q: We would like to better understand the .json files that are being produced by the STT.cpp scripts as we hope we could generate our own testdata as we believe that the current amount is rather low for our models.  
-A: Regarding data generation, please review Section 5 from our [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf).  
+A: Regarding data generation, please review Section V from our [paper](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf).  
   
 Q: My team and I would like to know when the missing testcases for n>15 in the MSPD contest are being released?  
 A: This issue has been fixed. Please check the [testcases](https://github.com/TILOS-AI-Institute/Multi-Source-Prim-Dijkstra/tree/main/contest/testcases) folder for more information.  
