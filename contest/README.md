@@ -276,7 +276,7 @@ Q: Are we allowed to train our models on your server?
 A: Please refrain from running anything other than inference.py on our server. Our server is supposed to serve as a means for contestants to upload and test their submissions, not train any models.   
 
 Q: If the "best known objective value" refers to normalized values, then why do the data_obj_stt_N.csv.gz folders only contain the absolute values for obj1,obj2,obj3? The problem with that is the following: The sum of normalized values have a different optimum than the sum of absolute values.  
-A:  Please refer to our evaluation [script](https://github.com/TILOS-AI-Institute/Multi-Source-Prim Dijkstra/blob/84471b8e9bcb09cf4b43e4d65c5d8f7a3f6e6a90/contest/inference.py#L109-L117). 
+A:  Please refer to our evaluation [script](inference.py#L109-L117). 
 You are given absolute values, but the evaluation script will normalize them.  
 
 Q: What does "the best known objective value" refer to?     
