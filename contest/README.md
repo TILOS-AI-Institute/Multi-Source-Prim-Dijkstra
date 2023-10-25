@@ -46,7 +46,7 @@ Second Place: $400
 Third Place: $250    
 Fourth and Fifth Place: $125  
 
-Progress Prizes will be awarded to the top 5 teams according to the contest leaderboard as of November 11th, 2023 11:59 PM PST.  
+Progress Prizes will be awarded to the top 5 teams according to the contest leaderboard as of October 25th, 2023 11:59 PM PST.  
 
 *Notes on prizes*:  
 (1) Recipients of TILOS project funding within the 12 months preceding the contest submission date are not eligible for an Award.   
@@ -249,47 +249,55 @@ To generate your own training data, please follow the instructions described in 
 
 ## FAQs  
 Q: How do I request a clarification or get a question answered?   
-A: Please email either shreyasthumathy@gmail.com or mwoo@eng.ucsd.edu. The question and answer will also appear on this README.  
-  
-Q: My team and I would like to know when the missing testcases for n>15 in the MSPD contest are being released?  
-A: This issue has been fixed.  
+A: Please email either shreyasthumathy@gmail.com or mwoo@ucsd.edu. The question and answer will also appear on this README.  
 
-Q: We would like to better understand the .json files that are being produced by the STT.cpp scripts as we hope we could generate our own testdata as we believe that the current amount is rather low for our models.  
-A: Regarding data generation, I think it would be very helpful to read Section 5 from our paper. Please let me know if you would like any further information.   
+Q: How do we test inference.py on the server?  
+A: Please create a team specific virtual enviornment so that you can install whatever packages necessary for your team's model. 
+Please also save a list of these packages in a standard requirements.txt file.   
+For more information, please review the October 16th, 2023 email.  
 
-Q: We're pretty sure that obj2 und obj3 have been swapped around in the testcases, since the github and paper talk about obj2 being $3*W+S$ and obj3 being $W+3*S$. The testcases seem have it the other way around. So which is the correct way?  
-A: From our README:  
-- obj1: First objective - skew + wireLength [int]  
-- obj2: Second objective - 3 * skew + wireLength [int]  
-- obj3: Third objective - skew + 3 * wireLength [int]  
+Q: When do we submit our trained model?    
+A: To keep teams moving forward well, the contest will support Alpha, Beta and Final submission deadlines. The Alpha and Beta deadlines help ensure smooth contest submission and evaluation processes. 
+1. Alpha submission (deadline: 10/25/23)
+2. Beta submission (deadline: 11/11/23)
+3. Final submission (deadline TBA)
+4. Please upload your team's submission to your team's assigned contest folder.
 
+Q: What is the maximum runtime per testcase?  
+A: Maximum runtime limit of inference: maximum of 10 CPU seconds (user time) per each testcase (pointset). This applies to all testcases across all values of $N$. Exceeding the runtime limit is severely penalized.  
+Please see inference.py for details of the runtime limitation.    
 
+Q: Are we allowed to train our models on your server?    
+A: Please refrain from running anything other than inference.py on our server. Our server is supposed to serve as a means for contestants to upload and test their submissions, not train any models.   
 
 Q: If the "best known objective value" refers to normalized values, then why do the data_obj_stt_N.csv.gz folders only contain the absolute values for obj1,obj2,obj3? The problem with that is the following: The sum of normalized values have a different optimum than the sum of absolute values.  
 A:  Please refer to our evaluation (script) [https://github.com/TILOS-AI-Institute/Multi-Source-Prim Dijkstra/blob/84471b8e9bcb09cf4b43e4d65c5d8f7a3f6e6a90/contest/inference.py#L109-L117]. 
-You are given absolute values, but the evaluation script normalizes them. 
+You are given absolute values, but the evaluation script will normalize them.  
 
+Q: What does "the best known objective value" refer to?     
+A: The “best known objective value” refers to the lowest sum of normalized cost and normalized skew computed by all combinations of alphas and sources described in Section V of our paper.    
+
+Q: We're pretty sure that obj2 und obj3 have been swapped around in the testcases, since the github and paper talk about obj2 being $3*W+S$ and obj3 being $W+3*S$. The testcases seem have it the other way around. So which is the correct way?  
+A: From our README:  
+- obj1: First objective - skew + wireLength [int]   
+- obj2: Second objective - 3 * skew + wireLength [int]   
+- obj3: Third objective - skew + 3 * wireLength [int]  
+  
+Q: We would like to better understand the .json files that are being produced by the STT.cpp scripts as we hope we could generate our own testdata as we believe that the current amount is rather low for our models.  
+A: Regarding data generation, please review Section 5 from our ISQED '23 paper.  
+  
+Q: My team and I would like to know when the missing testcases for n>15 in the MSPD contest are being released?  
+A: This issue has been fixed. Please check the testcases folder for more information.  
+
+Q: Are the visible test cases a random sample of the overall set of (visible+hidden) cases? (I would assume so.)    
+A: Yes    
 
 Q: What servers are used to run code?    
 A: Server specs: TBD (The VM instance will be created after receiving all registrations)  
-
-Q: What is the maximum runtime per testcase?  
-A: Maximum runtime limit of inference: maximum of 10 CPU seconds (user time) per each testcase (pointset). This applies to all testcases across all values of $N$. Exceeding the runtime limit is severely penalized
-Please see inference.py for details of the runtime limitation.  
-
-Q: How to submit our trained model?    
-A: To keep teams moving forward well, the contest will support Alpha, Beta and Final submission deadlines. The Alpha and Beta deadlines help ensure smooth contest submission and evaluation processes. 
-1. Alpha submission (deadline: 10/25/23): Please upload your models into /home/submission/alpha/teamID/  
-2. Beta submission (deadline: 11/11/23): Please upload your models into /home/submission/beta/teamID/  
-3. Final submission (deadline TBA): Please upload your models into /home/submission/final/teamID/    
-
-Q: Are the visible test cases a random sample of the overall set of (visible+hidden) cases? (I would assume so.)   
-A: Yes   
-
-Q: What does "the best known objective value" refer to?   
-A: The “best known objective value” refers to the lowest sum of normalized cost and normalized skew computed by all combinations of alphas and sources described in Section V of our paper.   
-
-
+ 
+Q: Is there a public leaderboard?  
+A: No: the (progress) prize winners will be announced by email once the respective deadline has passed.  
+  
 ## References
 1. A. B. Kahng, S. Thumathy and M. Woo,  "An Effective Cost-Skew Tradeoff Heuristic for VLSI Global Routing", [(.pdf)](https://vlsicad.ucsd.edu/Publications/Conferences/397/c397.pdf), Proc. IEEE Intl. Symp. on Quality Electronic Design, 2023, (to appear).  
 
