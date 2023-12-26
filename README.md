@@ -1,20 +1,20 @@
 # Multi-Source Prim-Dijkstra
 
-**UPDATE #3**
-We thank you very much for participating in the MSPD contest.
-Results have been compiled, and winners have been notified of their placement.
+**UPDATE #3**  
+We thank you very much for participating in the MSPD contest.  
+Results have been compiled, and winners have been notified of their placement.  
 
-Here is the final leaderboard:
-1st Place: Team DIAG, Score: 0.003106342769
-2nd Place: Team FU-Berlin, Score: 0.1761129309
-3rd Place: Team Moto, Score: 0.337300873
+Here is the final leaderboard:  
+1st Place: Team DIAG, Score: 0.003106342769  
+2nd Place: Team FU-Berlin, Score: 0.1761129309  
+3rd Place: Team Moto, Score: 0.337300873  
 
-We are very impressed by the quality and strength of your models, and hope that you are proud of your team's work. We also hope that you enjoyed this contest, and gained some new insight or skill by participating.
+We are very impressed by the quality and strength of your models, and hope that you are proud of your team's work. We also hope that you enjoyed this contest, and gained some new insight or skill by participating.  
 
 
-Thank you once again,
-Shreyas Thumathy and Mingyu Woo
-Contest Organizers
+Thank you once again,  
+Shreyas Thumathy and Mingyu Woo  
+Contest Organizers  
 
 
 **UPDATE #2**  
